@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.20.0/axios.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <header>
+            <input v-model="search" type="text"  placeholder="inserisci-parola" @keyUp.enter="searchMovies"> 
+        </header>
+
+        <main>
+            <div class="film" v-for="film in films">
+                <h1>{{film.title}}</h1>
+                <p>{{film.original_language}}</p>
+                <p class="overview">{{film.overview}}</p>
+                
+                <div class="voti">
+                    <i v-for="i in Nstelle(film.vote_average)"class="fas fa-star"></i>
+                    <i v-for="i in (5 - Nstelle(film.vote_average))"class="far fa-star due"></i>
+                </div>
+
+                <img  v-if="flags.includes(film.original_language)" :src="bandiera(film.original_language)" alt="">
+                <span v-else>{{film.original_language}}</span>
+
+               
+                
+               
+                
+            </div>
+        </main>
+        
+        
+
+    </div>
+    <script src="Javascript.JS"></script>
+</body>
+</html>
