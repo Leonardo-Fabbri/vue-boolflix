@@ -13,23 +13,26 @@
 <body>
     <div id="app">
         <header>
-            <input v-model="search" type="text"  placeholder="inserisci-parola" @keyUp.enter="searchMovies"> 
+            <input v-model="search" type="text"  placeholder="cerca film o serie tv" @keyUp.enter="searchMovies"> 
         </header>
 
         <main>
             <div class="film" v-for="film in films">
-                <h1>{{film.title}}</h1>
-                <p>{{film.original_language}}</p>
-                <p class="overview">{{film.overview}}</p>
-                
-                <div class="voti">
-                    <i v-for="i in Nstelle(film.vote_average)"class="fas fa-star"></i>
-                    <i v-for="i in (5 - Nstelle(film.vote_average))"class="far fa-star due"></i>
+                <!-- <img :src="poster(film.poster_path)" alt="" class="copertina">  -->
+                <div class="descrizione">
+                    <h1>{{film.title}}</h1>
+                   <img  v-if="flags.includes(film.original_language)" :src="bandiera(film.original_language)" alt="" class="flag">
+                   <span v-else>{{film.original_language}}</span>
+                   
+                   <div class="voti">
+                       <i v-for="i in Nstelle(film.vote_average)"class="fas fa-star"></i>
+                       <i v-for="i in (5 - Nstelle(film.vote_average))"class="far fa-star due"></i>
+                   </div>
                 </div>
+                
+               
 
-                <img  v-if="flags.includes(film.original_language)" :src="bandiera(film.original_language)" alt="">
-                <span v-else>{{film.original_language}}</span>
-
+                
                
                 
                
@@ -42,4 +45,4 @@
     </div>
     <script src="Javascript.JS"></script>
 </body>
-</html>
+</html> 

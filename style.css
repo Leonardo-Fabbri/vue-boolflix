@@ -24,22 +24,37 @@ main {
     height: 500px;
     display: flex;
     justify-content: space-between;
-    border: 1px solid black;
+    border: 3px solid black;
     display: flex;
-    flex-direction: column;
+    
     color: white;
     text-align: center;
     
 }
+.descrizione {
+    min-height: 50%;
+    width: 100%;
+
+}
+.copertina {
+    width: 250px;
+    height: 500px;
+}
+.flag {
+    width: 20px;
+    height: 20px;
+    margin: 0 auto;
+}
 .overview {
-    font-size: 10px;
+    font-size: 13px;
 }
 .fa-star {
     color: red;
     
 }
 .film h1 {
-    margin-top: 20px;
+    font-size: 18px;
+    margin-top: 10px;
     text-align: center;
 }
 .film .voto {
