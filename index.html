@@ -18,10 +18,12 @@
 
         <main>
             <div class="film" v-for="film in films">
-                <img :src="poster(film.poster_path)" alt="" class="copertina">
+                <img  v-if="film.poster_path" :src="poster(film.poster_path)" alt="" class="copertina">
+                <img v-else src="https://www.altavod.com/assets/images/poster-placeholder.png" alt="" class="copertina">
 
                 <div class="descrizione">
-                    <h1>{{film.title}}</h1>
+                    <h1>{{film.title}}</h1> 
+                    <i class="fas fa-play-circle"></i>
                    <div class="lang">Lingua originale: <img  v-if="flags.includes(film.original_language)" :src="bandiera(film.original_language)" alt="" class="flag"></div>
                    <span v-else>{{film.original_language}}</span>
                    <p class="trama">{{film.overview}}</p>

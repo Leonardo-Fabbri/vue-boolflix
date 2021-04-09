@@ -32,31 +32,53 @@ main {
     position: relative; 
     border: 0px;
     border-radius: 10px ;
+    display: block;
     
 }
+
 .trama {
     color: lightgray;
-    font-size: 13px;
+    font-size: 12px;
     margin-top: 10px;
 }
 .descrizione {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    bottom: 0px;
+    padding-top: 50px;
+    background-color: rgba(20,20,20,0.5);
+    padding-bottom: 10px;
+    opacity: 0;
+
+}
+
+.descrizione:hover {
+    opacity:1 ;
+
+}
+
+.film .descrizione:hover {
     min-height: 20%;
     width: 100%;
     position: absolute;
     bottom: 0px;
-    padding-top:20px ;
     background-color: rgba(20,20,20,0.5);
     padding-bottom: 10px;
-
+    display: block;
 }
 
+.descrizione .fa-play-circle {
+    font-size: 30px;
+    margin-top: 10px;
+}
 .copertina {
     width: 251px;
     height: 500px;
     border-radius: 10px ;
 }
 .lang {
-    margin-top: 15px;
+    margin-top: 10px;
 }
 .flag {
     width: 20px;
@@ -66,7 +88,7 @@ main {
 }
 
 .overview {
-    font-size: 13px;
+    font-size: 10px;
 }
 .fa-star {
     color: red;
