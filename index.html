@@ -18,16 +18,19 @@
 
         <main>
             <div class="film" v-for="film in films">
-                <!-- <img :src="poster(film.poster_path)" alt="" class="copertina">  -->
+                <img :src="poster(film.poster_path)" alt="" class="copertina">
+
                 <div class="descrizione">
                     <h1>{{film.title}}</h1>
-                   <img  v-if="flags.includes(film.original_language)" :src="bandiera(film.original_language)" alt="" class="flag">
+                   <div class="lang">Lingua originale: <img  v-if="flags.includes(film.original_language)" :src="bandiera(film.original_language)" alt="" class="flag"></div>
                    <span v-else>{{film.original_language}}</span>
-                   
+                   <p class="trama">{{film.overview}}</p>
                    <div class="voti">
                        <i v-for="i in Nstelle(film.vote_average)"class="fas fa-star"></i>
                        <i v-for="i in (5 - Nstelle(film.vote_average))"class="far fa-star due"></i>
                    </div>
+                  
+                    
                 </div>
                 
                
