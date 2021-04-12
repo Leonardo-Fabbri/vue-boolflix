@@ -13,7 +13,27 @@
 <body>
     <div id="app">
         <header>
-            <input v-model="search" type="text"  placeholder="cerca film o serie tv" @keyUp.enter="searchMovies"> 
+            
+            <img src="./images/1920px-Logonetflix.png" alt="">
+            <ul >
+                <li>Home</li>
+                <li>Serie TV</li>
+                <li>Film</li>
+                <li>Nuovi e popolari</li>
+                <li>la mia lista</li> 
+            </ul>
+           
+             <ul class="dx">
+                <li> <input v-model="search" type="text"  placeholder="cerca film o serie tv" @keyUp.enter="searchMovies"></li>
+                <li> BAMBINI</li>
+                <li><i class="fal fa-bell"></i></li>
+                <li><i class="far fa-gift"></i></li>
+             </ul>
+            
+          
+                
+         
+          
         </header>
 
         <main>
@@ -26,7 +46,7 @@
                     <i class="fas fa-play-circle"></i>
                    <div class="lang">Lingua originale: <img  v-if="flags.includes(film.original_language)" :src="bandiera(film.original_language)" alt="" class="flag"></div>
                    <span v-else>{{film.original_language}}</span>
-                   <p class="trama">{{film.overview}}</p>
+                   <p class="trama">{{film.overview}}</p> 
                    <div class="voti">
                        <i v-for="i in Nstelle(film.vote_average)"class="fas fa-star"></i>
                        <i v-for="i in (5 - Nstelle(film.vote_average))"class="far fa-star due"></i>
