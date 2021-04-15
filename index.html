@@ -23,12 +23,8 @@
                 <li>la mia lista</li> 
             </ul>
            
-             <ul class="dx">
-                <li> <input v-model="search" type="text"  placeholder="cerca film o serie tv" @keyUp.enter="searchMovies"></li>
-                <li> BAMBINI</li>
-                <li><i class="fal fa-bell"></i></li>
-                <li><i class="far fa-gift"></i></li>
-             </ul>
+           <input v-model="search" type="text"  placeholder="cerca film o serie tv" @keyUp.enter="searchMovies">
+            
             
           
                 
@@ -37,6 +33,8 @@
         </header>
 
         <main>
+        
+
             <div class="film" v-for="film in films">
                 <img  v-if="film.poster_path" :src="poster(film.poster_path)" alt="" class="copertina">
                 <img v-else src="https://www.altavod.com/assets/images/poster-placeholder.png" alt="" class="copertina">
@@ -51,18 +49,11 @@
                        <i v-for="i in Nstelle(film.vote_average)"class="fas fa-star"></i>
                        <i v-for="i in (5 - Nstelle(film.vote_average))"class="far fa-star due"></i>
                    </div>
-                  
-                    
                 </div>
-                
-               
-
-                
-               
-                
-               
-                
             </div>
+
+        
+
         </main>
         
         
