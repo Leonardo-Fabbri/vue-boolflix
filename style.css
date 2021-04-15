@@ -13,9 +13,8 @@ header {
     
 }
 
-.dx {
-    color: white;
-    display: inline-block;
+input {
+    float: right;
     padding-right: 20px;
 }
 header img {
@@ -30,7 +29,7 @@ header ul {
     vertical-align: middle;
     align-items: center;
     margin-top: 7px;
-    float: left;
+  
 
 }
 
@@ -61,29 +60,29 @@ header input {
     color: white;
 }
 main {
-    padding: 100px;
-    width: 100%;
+    width:100% ;
+    padding-left: 50px; 
+    padding-right: 50px; 
+
     min-height: 100vh;
     background-color: #141414;
     display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+  
+    overflow-x: scroll;
 }
 
 .film {
     width: 250px;
     height: 500px;
-    display: flex;
-    justify-content: space-between;
     margin-right: 5px;
-    margin-top: 10px;
-    display: flex;
+    margin-top: 7%;
     color: white;
     text-align: center;
     position: relative; 
     border: 0px;
     border-radius: 10px ;
-    display: block;
+    display: inline-block;
+    vertical-align: middle;
     
 }
 

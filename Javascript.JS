@@ -2,6 +2,7 @@ var app = new Vue ({
     el:"#app",
     data: {
         search: "",
+        counterVideo:0,
         films:[],
         flags:["fr","it","en","de","es","ja","ru"]
 
@@ -55,7 +56,15 @@ var app = new Vue ({
        poster(img) {
            return `https://image.tmdb.org/t/p/w185/${img}`;
 
-        }
+        },
+       
+
+       
+            
+    
+    
+        
+    
         
 
 
